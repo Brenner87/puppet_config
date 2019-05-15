@@ -1,0 +1,7 @@
+packages/**
+*.pem
+*.gem
+*.rpm
+*.tar
+.vagrant
+.vagrant/**
