@@ -1,5 +1,6 @@
 FROM centos:7
 ARG puppet_conf=/etc/puppetlabs/puppet
+ARG keys_path=~/vagrant/keys/
 ENV PUPPET_BIN=/opt/puppetlabs/puppet/bin
 #RUN yum -y update && \
 RUN yum -y install git && \
@@ -7,7 +8,7 @@ RUN yum -y install git && \
     yum -y install puppetserver && \
     yum clean all
 COPY . $puppet_conf
-#COPY ./keys $puppet_conf/keys
+COPY $keys_path $puppet_conf/keys
 #COPY ./master-entrypoint.sh $puppet_conf
 WORKDIR $puppet_conf
 RUN mv ./puppetserver /etc/sysconfig/puppetserver && \
