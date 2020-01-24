@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  puppetmaster:
+    image: puppetmaster:latest
+    build: 
+      dockerfile: Dockerfile
+      context: ./
+    networks:
+      - local_network
+    ports:
+      - 8140:8140
+
+networks:
+  local_network:
+    driver: bridge

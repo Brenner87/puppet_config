@@ -1,6 +1,6 @@
 FROM centos:7
 ARG puppet_conf=/etc/puppetlabs/puppet
-ARG keys_path=./
+ARG keys_path=../keys
 ENV PUPPET_BIN=/opt/puppetlabs/puppet/bin
 #RUN yum -y update && \
 RUN yum -y install git && \
